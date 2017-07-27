@@ -1,6 +1,9 @@
 require 'pry'
+
 class Board
+
   attr_accessor :board
+
   def initialize
     @board = boardRender
   end
@@ -37,16 +40,20 @@ class Board
     print clear
     printBoard
   end
-end
 
-# board = Board.new
-# board.printBoard
-# #binding.pry
-# board.addPiece(1, "◼︎")
-# board.printNewBoard
-# board.addPiece(4, "◻︎")
-# board.printNewBoard
-# board.addPiece(1, "◼︎")
-# board.printNewBoard
-# board.addPiece(5, "◻︎")
-# board.printNewBoard
+  def winner?
+    #4 in a row
+    #check each position for player piece
+    #if player piece is found increase count by 1
+    #store index in new Array for each found piece in row
+    #check next posistion
+    #if next posistion is the same piece increase count again
+    #eslif next posistion is NOT the same piece reset the count to 0
+    #after row has been check move to next row
+    #repeat check for each row
+    #4 in a column
+    #check each new index Array against the one above it
+    #if match is found check next row
+    #elsif no match is found in that row start checking the new row array
+  end
+end
