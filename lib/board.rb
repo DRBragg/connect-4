@@ -28,15 +28,20 @@ class Board
     while placed != true && i >= 0
       if ["◻︎", "◼︎"].include?(@board[i][index])
         i -= 1
+          if i < 0
+            return placed
+          end
       else
         @board[i][index] = piece
         placed = true
+        return placed
       end
     end
   end
 
   def printNewBoard
-    clear = "\r" + ("\e[A\e[A\e[A\e[A\e[A\e[A\e[A\e[A\e[A\e[A\e[J")
+    clear = "\r" + ("\e[2J")
+    #\e[A\e[A\e[A\e[A\e[A\e[A\e[A\e[A\e[A\e[A\e
     print clear
     printBoard
   end
